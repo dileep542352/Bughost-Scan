@@ -41,7 +41,7 @@ class cdnscanner:
 				proxy = {'http' : f'http://{proxyhost}:{port}', 'https' : 'http://{proxyhost}:{port}'}
 				req = self.request(url,proxy,timeout=7,allow_redirects=False)			
 			else:
-				req = self.request(url,timeout=7,allow_redirects=False)
+				req = self.request(url,timeout=2,allow_redirects=False)
 			status = req.status_code
 			server = req.headers['server']
 			response = f'\n{G}{ip}\t{status}\t{server}{GR}\r\n'

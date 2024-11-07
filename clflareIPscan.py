@@ -39,7 +39,7 @@ class cdnscanner:
 			if self.proxy:
 				proxyhost,port = self.proxy.split(':')[0],int(self.proxy.split(':')[1])
 				proxy = {'http' : f'http://{proxyhost}:{port}', 'https' : 'http://{proxyhost}:{port}'}
-				req = self.request(url,proxy,timeout=7,allow_redirects=False)			
+				req = self.request(url,proxy,timeout=2,allow_redirects=False)			
 			else:
 				req = self.request(url,timeout=2,allow_redirects=False)
 			status = req.status_code
